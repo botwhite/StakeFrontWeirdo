@@ -1,0 +1,1798 @@
+@font-face {
+  font-family: gloria;
+  src: url("./Gloria_Hallelujah/GloriaHallelujah-Regular.ttf")
+    format("truetype");
+}
+* {
+  font-family: "gloria" !important;
+  color: #273e45 !important;
+  cursor: url("./res/cursor.png"), auto;
+  transition: all ease;
+}
+.alfaCont {
+  background-image: url("./res/01.jpg");
+
+  background-repeat: no-repeat;
+  background-position: center !important;
+  height: 1080px;
+  margin: 0em;
+  padding: 0em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+.hideDesktop {
+  display: none;
+}
+.i-33 {
+  color: rgb(40, 78, 58) !important;
+}
+
+.hide {
+  display: none;
+}
+
+.headerBar {
+  background-color: #24063f;
+  padding: 2em 0em;
+  border-bottom: #fecd19 2px solid;
+  height: 2.4em;
+}
+
+.navItems {
+  display: flex;
+  padding: 0;
+  margin: 0em 3em;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.navItems > li {
+  justify-items: end;
+  list-style-type: none;
+  padding: 0em 0em;
+  margin: 0em 1em;
+}
+.navItems > li > a {
+  color: antiquewhite !important;
+  text-decoration: none;
+}
+li > a > img {
+  width: 2em;
+  height: 2em;
+}
+
+body {
+  height: 100%;
+  margin: 0em 0em;
+  padding: 0;
+  border: none;
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+.container {
+  margin: 0em;
+  padding: 0em;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  /* background-image: url(./res/01.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; */
+  height: 100vh;
+}
+.mainContent {
+  background-image: url(./res/01.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  margin: 0em;
+  padding: 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.paragraph {
+  text-align: justify;
+  color: antiquewhite !important;
+}
+/* toggle mute/unmute button class  */
+.mute {
+  background-image: url("./res/1.png");
+  background-size: cover;
+  height: 2em;
+  width: 2em;
+}
+.unmute {
+  background-image: url("./res/8.png");
+  background-size: cover;
+  height: 2em;
+  width: 2em;
+}
+.mute:hover,
+.unmute:hover {
+  cursor: pointer;
+}
+
+.leftBox {
+  width: 30%;
+  background-image: url("./res/papel.png");
+  background-repeat: no-repeat;
+  background-size: 0% 0%;
+  opacity: 1;
+}
+.rightBox {
+  width: 60%;
+  background-image: url("./res/ouija.png");
+  background-repeat: no-repeat;
+  background-size: 0% 0%;
+  opacity: 1;
+}
+.separator {
+  width: 2em;
+}
+.leftBoxContent {
+  padding-top: 2em;
+  padding-left: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.rightBoxContent {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+.logo {
+  width: 14.5em;
+  height: 4em;
+  vertical-align: middle;
+  text-align: center;
+}
+.logoLi {
+  position: absolute;
+  left: 2em;
+  top: 1em;
+}
+
+.statisticList {
+  padding: 0;
+  font-size: 15px;
+}
+.quant {
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0;
+  height: 1.4em;
+}
+
+.weirdTrio {
+  margin-top: 2em;
+}
+.subtStatistic {
+  margin-bottom: -10px;
+}
+.stats {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.stat {
+  padding: 0 1.5em;
+  width: 35%;
+}
+.weirdos {
+  margin-top: calc(5em + 5%);
+  width: 90%;
+  height: 25em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 0.5em;
+}
+.emptyWeirdo {
+  height: 14.5em;
+  width: 10.5em;
+  position: relative;
+  background-color: white;
+}
+.checkW::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 2em;
+  height: 2em;
+  background-image: url("./res/Iconos-08.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  opacity: 1;
+}
+
+.crossW::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 2em;
+  height: 2em;
+  background-image: url("./res/Iconos-09.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  opacity: 1;
+}
+
+.weirdMessage {
+  font-size: 9px;
+  justify-content: center;
+  text-align: left;
+  padding: 0.5em;
+  line-height: 12px;
+}
+
+.emptyWeirdo > img {
+  position: relative;
+  top: 4%;
+  left: 5%;
+  width: 90%;
+  height: 70%;
+}
+.st1 {
+  top: -6em;
+  position: relative;
+  text-align: right;
+}
+.st2 {
+  top: -4em;
+  position: relative;
+  text-align: center;
+}
+.st3 {
+  top: -6em;
+  position: relative;
+  text-align: left;
+}
+.yellowBand {
+  padding: 0px;
+  font-size: 10px;
+  line-height: 1.3;
+  text-align: center;
+  background-color: #fecd19;
+  border-radius: 10px;
+  width: 70%;
+  margin: 1% 15% -2px;
+}
+.headerBar {
+  background-color: #24063f;
+  padding: 2em 0em;
+  border-bottom: #fecd19 2px solid;
+  height: 2.4em;
+}
+.navItems {
+  display: flex;
+  padding: 0;
+  margin: 0em 3em;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.navItems > li {
+  justify-items: end;
+  list-style-type: none;
+  padding: 0em 0em;
+  margin: 0em 1em;
+}
+.navItems > li > a {
+  color: antiquewhite !important;
+  text-decoration: none;
+}
+li > a > img {
+  width: 2em;
+  height: 2em;
+}
+
+::-webkit-scrollbar {
+  width: 0.5em;
+  height: 0.5em !important;
+}
+::-webkit-scrollbar-thumb {
+  width: 0.5em;
+  background-color: rgb(57, 243, 73);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-track {
+  background-color: #273e45;
+}
+.cummulative {
+  background-color: #493362;
+  color: #a2faab !important;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0.5em 2.3em;
+  margin-left: 10px;
+}
+.cummulative::before {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: -15px;
+  width: 4em;
+  height: 4em;
+  background-image: url(./res/GOLD.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  opacity: 1;
+}
+
+.claimButton {
+  position: relative;
+  background-color: #35f049;
+  height: 2.4em;
+  vertical-align: middle;
+  font-weight: 600;
+  color: #251b2e !important;
+  text-align: center;
+  padding: 0.5em 1em 0;
+  margin-right: 0px;
+  border-radius: 12px;
+  right: 15px;
+}
+.uwuClaim {
+  display: flex;
+  bottom: 7px;
+  position: relative;
+}
+.socialButtons {
+  margin: 0 0.8em !important;
+}
+
+.mobileUwuClaim {
+  display: none;
+}
+
+.foot {
+  position: relative !important;
+  background-color: #10011f;
+  width: 100vw;
+  padding: 0em;
+  display: block;
+  bottom: 0;
+  margin: -8px;
+}
+.foot2 {
+  margin: 4em 0em 0em 12%;
+  display: -webkit-inline-box;
+}
+
+.whitespace {
+  width: 30%;
+  width: 340px;
+  text-align: left;
+  margin-top: -1.3em;
+  color: #eee;
+  margin-right: 2em;
+  margin-left: -2em;
+}
+
+.foot2 > .colla > * {
+  color: #473558 !important;
+  font-family: gloria !important;
+  text-align: left;
+  background-color: #fefddf;
+  border-style: inset;
+  border-color: #3eff68;
+  margin-top: -3px;
+  width: 100%;
+}
+.collapsible {
+  color: #473558 !important;
+  font-family: gloria !important;
+  text-align: left;
+  background-color: #fefddf;
+  border-style: inset;
+  border-color: #3eff68;
+  margin-top: -3px;
+  width: 100%;
+}
+
+.devil {
+  background-color: #212121;
+  width: 100vw;
+  height: 4em;
+  position: relative;
+  padding-top: 1em;
+  margin-top: 3em;
+}
+.content > p {
+  margin: 0em 0em 0em 0em;
+  padding: 1.5em;
+  color: antiquewhite !important;
+  background-color: #92c972;
+}
+
+.colla {
+  margin: 0em 0em 0em 0em;
+
+  width: 1000px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #fefddf;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 25%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active,
+.collapsible:hover {
+  background-color: #fefddf;
+}
+
+.Collapsible__trigger {
+  border: red 1px;
+  width: 800px;
+  background-color: transparent;
+  padding: 8px;
+  margin-top: 0;
+}
+/* Style the collapsible content. Note: hidden by default */
+.contentCollapse {
+  overflow: auto;
+  font-weight: lighter;
+  width: 95.5% !important;
+  border-top: solid limegreen 2px;
+  padding: 0 2em 0 1em;
+}
+.trigger {
+  font-size: 1.5em;
+  margin-left: 1em;
+}
+.collapseButt {
+  width: 100%;
+  background-color: transparent;
+  padding: 8px;
+  margin-top: 0;
+  font-family: galBold !important;
+}
+
+#Yourwallet,
+#Yourweirdosstaked,
+#WalletD {
+  margin-left: 19em;
+  margin-top: -1em;
+  text-shadow: #91f350 1px 1px;
+}
+#Your_WeirdosD {
+  text-shadow: #91f350 1px 1px;
+  font-size: 4em;
+  margin-top: -2em;
+  position: relative;
+  left: 3em;
+  top: 1.5em;
+}
+
+.tooltip {
+  display: block;
+  position: relative;
+}
+
+.tooltip .right {
+  min-width: 270px;
+  top: 50%;
+  left: 100%;
+  margin-left: -80px;
+  transform: translate(0, -50%);
+  padding: 5px 5px 5px 20px;
+  color: #444444;
+  background-color: #eeeeee;
+  font-weight: normal;
+  font-size: 10px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.tooltip .rightC {
+  min-width: 200px;
+  top: 25%;
+  left: 100%;
+  margin-left: 1px;
+  transform: translate(0, -50%);
+  padding: 0px;
+  color: #444444;
+  background-color: #eeeeee;
+  font-weight: normal;
+  font-size: 12px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+
+.tooltip:hover .right,
+.tooltip:hover .rightC {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .right i {
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -12px;
+  width: 12px;
+  height: 24px;
+  overflow: hidden;
+}
+.tooltip .rightC i {
+  position: absolute;
+  top: 10%;
+  right: 100%;
+  margin-top: -10px;
+  width: 12px;
+  height: 24px;
+  overflow: hidden;
+}
+
+.tooltip .right i::after,
+.tooltip .rightC i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 0;
+  top: 50%;
+  transform: translate(50%, -50%) rotate(-45deg);
+  background-color: #eeeeee;
+}
+
+.stakedTooltip {
+  left: 155% !important;
+  min-width: 270px;
+  top: 50%;
+  margin-left: -100px;
+  transform: translate(0, -50%);
+  padding: 5px 20px 5px 5px !important;
+  color: #444444 !important;
+  background-color: #eeeeee !important;
+  font-weight: normal;
+  font-size: 10px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  visibility: hidden;
+  opacity: 0;
+  text-shadow: none !important;
+}
+.tooltip .bottom {
+  width: 400px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 10px 20px 10px 20px;
+  color: #666666;
+  background-color: #eeeeee;
+  font-weight: normal;
+  font-size: 10px;
+  border-radius: 10px;
+  position: absolute;
+  z-index: 99999999;
+  box-sizing: border-box;
+  display: none;
+}
+
+.tooltip:hover .bottom {
+  display: block;
+}
+
+.tooltip .bottom img {
+  width: 400px;
+}
+
+.tooltip .bottom i {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -12px;
+  width: 24px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.tooltip .bottom i::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(45deg);
+  background-color: #eeeeee;
+}
+
+/*burgir*/
+
+body {
+  text-align: center;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+#toggle {
+  display: none;
+}
+.toggleClose {
+  top: 3em !important;
+}
+/**
+    Hamburger
+  **/
+.hamburger {
+  position: absolute;
+  top: -1em;
+  right: 2em;
+  margin-left: -2em;
+  margin-top: -45px;
+  width: 2em;
+  height: 45px;
+  z-index: 1000;
+}
+
+.hamburger div {
+  position: relative;
+  width: 2em;
+  height: 4px;
+  border-radius: 3px;
+  background-color: #f8982b;
+  margin-top: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+/**
+  Nav Styles
+  **/
+.toggleButton {
+  position: sticky;
+  top: 1em;
+  right: 2em;
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #250a3d;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0);
+  z-index: 999;
+}
+.nav-wrapper {
+  position: fixed;
+  overflow-y: auto;
+  height: 100vh;
+  width: 100vw;
+  z-index: 9999;
+  background-color: #250a3d;
+  top: 0;
+  padding-top: 5em;
+}
+nav {
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 10%;
+}
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #6ecddd !important;
+  font-size: 2em;
+  display: inline-block;
+  margin-top: 1.25em;
+  transition: color 0.2s ease-in-out;
+  letter-spacing: 1px;
+}
+nav a:before {
+  content: "";
+  height: 0;
+  position: absolute;
+  width: 0.25em;
+  background-color: white;
+  left: -0.5em;
+  transition: all 0.2s ease-in-out;
+}
+nav a:hover {
+  color: white;
+}
+nav a:hover:before {
+  height: 100%;
+}
+
+/**
+  Animations
+  **/
+#toggle:checked + .hamburger .top-bun {
+  transform: rotate(-45deg);
+  margin-top: 25px;
+}
+#toggle:checked + .hamburger .bottom-bun {
+  opacity: 0;
+  transform: rotate(45deg);
+}
+#toggle:checked + .hamburger .meat {
+  transform: rotate(45deg);
+  margin-top: -7px;
+}
+
+#toggle:checked + .hamburger + .nav {
+  top: 0;
+  transform: scale(1);
+}
+/* burgir */
+
+@media screen and (max-width: 767px) {
+  .BM {
+    background-color: red;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .alfaCont {
+    display: flex;
+    flex-direction: column;
+    background-image: none !important;
+    height: max-content;
+    margin: 0em;
+    padding-bottom: 2em;
+  }
+  .hideDesktop {
+    display: inline !important;
+  }
+  #WalletD,
+  #Your_WeirdosD {
+    display: none;
+  }
+  .logo {
+    width: 12em;
+    height: 4em;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+  .hideMob {
+    display: none;
+  }
+  .colla {
+    width: 80vw;
+  }
+  .collapsible:active {
+    background-color: #fefddf;
+  }
+  .active,
+  .collapsible:hover {
+    background-color: #fefddf;
+  }
+  .devil > img {
+    width: 75%;
+    padding: 0.5em;
+  }
+  body {
+    background-image: url(./res/fondo-mobile-05.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 100%;
+    margin: 0em 0em;
+    padding: 0;
+    border: none;
+  }
+  .mobUL {
+    list-style: none;
+  }
+  .mobUL > li > a {
+    text-decoration: none;
+    color: #6ecddd !important;
+  }
+  .contMobSocialButtons {
+    right: 2em;
+    position: relative;
+    top: 4em;
+  }
+  .mobSocialButtons {
+    display: inline;
+    margin-left: -20px;
+  }
+
+  .mobUL > li {
+    height: 3em;
+    margin: 0;
+    padding: 0;
+  }
+  .mobileUwuClaim {
+    display: flex;
+  }
+  .uwuClaim {
+    vertical-align: middle;
+    margin-left: 7em;
+    margin-bottom: 2em;
+    top: 1em;
+  }
+  .cummulative {
+    padding: 0.4em 1.5em !important;
+  }
+  .desktopClaim {
+    display: none;
+  }
+  .headerBar {
+    height: 2.4em;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0em;
+  }
+  .weirdTrio {
+    display: none;
+  }
+  .leftBox {
+    background-image: url(./res/papel.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    text-align: center;
+    margin-left: 2%;
+  }
+  .separator {
+    display: none;
+  }
+  .rightBox {
+    width: 90%;
+    background-image: none;
+    margin: auto;
+    margin-top: 0 !important;
+  }
+  .rightBoxContent {
+    padding: 0em;
+    flex-direction: row;
+    align-items: flex-start;
+    overflow-x: scroll;
+    display: flex;
+    align-content: center;
+    justify-content: flex-start;
+  }
+  .weirdos {
+    margin-top: calc(0em + 5%);
+    height: 100%;
+    display: grid;
+    grid-gap: 1.5em;
+    justify-content: start;
+    grid-auto-flow: column;
+    overflow: initial;
+  }
+  .emptyWeirdo > img {
+    position: relative;
+    top: 4%;
+    left: 0%;
+    width: 90%;
+    height: 65%;
+  }
+  .weirdMessage {
+    font-size: 12px;
+    padding: 1.2em;
+    line-height: 16px;
+    color: antiquewhite !important;
+  }
+  .emptyWeirdo {
+    height: 21em;
+    width: 16em;
+    position: relative;
+    background-color: #2e0746;
+    margin-bottom: 1em !important;
+    border-radius: 4px;
+  }
+  .yellowBand {
+    padding: 0px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 2em;
+    text-align: center;
+    background-color: #3eff68;
+    border-radius: 10px;
+    width: 90%;
+    margin: 6% 5% -3% 5%;
+  }
+  .leftBoxContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    padding: 1em 5% 2em 10%;
+  }
+  .statBox {
+    width: 45%;
+    padding: 5px;
+    margin: 0;
+  }
+  .SBLast {
+    width: 100%;
+  }
+  .statisticList {
+    padding: 0;
+    width: 95vw;
+    font-size: 15px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .quant {
+    padding: 0;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: -20px;
+  }
+  .approve {
+    font-size: 1.2em;
+    width: 70%;
+    position: relative;
+    background-color: #35f049;
+    height: 2.4em;
+    font-weight: 600;
+    color: #251b2e !important;
+    text-align: center;
+    border-radius: 12px;
+    margin-top: 3em;
+  }
+  .content {
+    width: 98.2% !important;
+  }
+  .mute,
+  .unmute {
+    top: 3.5em;
+    position: relative;
+  }
+
+  .logoMov {
+    width: 9em;
+    height: 3em;
+    position: relative;
+    left: -6em;
+    top: -0.5em;
+  }
+  .muteMobile {
+    position: absolute;
+    top: 5.2em;
+    right: 22%;
+    margin-left: -2em;
+    margin-top: -45px;
+    width: 1.5em;
+    height: 1.5em;
+    z-index: 1000;
+  }
+  #Wallet {
+    margin-left: 0em;
+    margin-top: 1em;
+    text-shadow: #91f350 1px 1px;
+    margin-bottom: 1em;
+  }
+  #Your_Weirdos {
+    margin-left: 0em;
+    margin-top: -0.5em;
+    text-shadow: #91f350 1px 1px;
+    margin-bottom: -1em;
+    font-size: 4em;
+  }
+
+  .walletTitle {
+    font-size: 1.5em;
+    color: #6ecddd !important;
+  }
+  .stakedTitle {
+    font-size: 1.5em;
+    color: #6ecddd !important;
+  }
+  .foot {
+    margin: 0;
+  }
+  .foot2 {
+    margin: 4em 0em 0em 5%;
+  }
+  .trigger {
+    font-size: 12px;
+  }
+}
+/*Queries*/
+@media screen and (min-width: 768px) and (max-width: 1350px) {
+  .container {
+    height: 450px;
+    margin: 2em 0em;
+    padding: 2em 0em;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    /*background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center; */
+  }
+  body {
+    height: 100%;
+    margin: 0em 0em;
+    padding: 0;
+    border: none;
+  }
+
+  .leftBox {
+    width: 30%;
+    max-width: 250px;
+    min-width: 250px;
+    max-height: 550px;
+  }
+  .leftBoxContent {
+    padding-top: 0em;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    left: 3em;
+    top: 4em;
+  }
+  .rightBox {
+    width: 60%;
+    max-width: 680px;
+    min-width: 680px;
+    max-height: 550px;
+    margin-left: 3em;
+  }
+  .rightBoxContent {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: -8em;
+    position: relative;
+  }
+  /**/
+  .alfaCont {
+    background-image: url(./res/1350.jpg) !important ;
+    background-size: 1350px 585px;
+    height: 585px;
+  }
+
+  .statisticList {
+    padding: 0px;
+    font-size: 10px;
+    text-align: left;
+  }
+  .statistics {
+    padding: -0px;
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-stretch: condensed;
+    text-align: left;
+  }
+  .quant {
+    padding: 0;
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: -15px;
+    text-align: left;
+  }
+  .weirdTrio > img {
+    width: 14.5em;
+    margin-top: -20px;
+    margin-left: -25px;
+  }
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 0.5em;
+    line-height: 12px;
+    margin-left: -3px;
+  }
+  .weirdos {
+    margin-top: calc(13.5em + 5%);
+    width: 90%;
+    height: 18em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 0.5em 0em;
+  }
+  .emptyWeirdo {
+    height: 14.5em;
+    width: 10.5em;
+    position: relative;
+    background-color: rgb(61, 25, 83);
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #1d5507;
+    border-width: 1.5px;
+  }
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 1em 1em 0em 1em;
+    line-height: 12px;
+    color: aliceblue !important;
+  }
+  .emptyWeirdo > img {
+    position: relative;
+    top: 2%;
+    left: 0%;
+    width: 94%;
+    height: 68%;
+  }
+  .st1 {
+    top: -6em;
+    position: relative;
+    text-align: right;
+  }
+  .st2 {
+    top: -4em;
+    position: relative;
+    text-align: center;
+  }
+  .st3 {
+    top: -6em;
+    position: relative;
+    text-align: left;
+  }
+  .yellowBand {
+    padding: 0px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    background-color: rgb(112, 255, 83);
+    border-radius: 8px;
+    width: 94%;
+    margin: 2% 3% -2% 3%;
+  }
+  .navItems {
+    font-size: 0.85em;
+    margin-top: 0.65em;
+  }
+  .cummulative::before {
+    content: "";
+    position: absolute;
+    top: -16px;
+    left: -15px;
+    width: 4.2em;
+    height: 4.2em;
+    background-image: url(./res/GOLD.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+  }
+
+  .colla {
+    width: 680px;
+  }
+  .content {
+    width: 99.1% !important;
+  }
+  .foot {
+    position: absolute;
+    background-color: #10011f;
+    width: 100vw;
+    padding: 0em;
+    display: block;
+  }
+  .foot2 {
+    margin: 4em 0em 0em 0em;
+    display: -webkit-inline-box;
+  }
+
+  .whitespace {
+    width: 35%;
+    width: 240px;
+    text-align: left;
+    margin-top: -1.5em;
+    color: #eee;
+    margin-right: 3.2em;
+    margin-left: 0em;
+    font-size: 12px;
+  }
+
+  .foot2 > .colla > *,
+  .collapsible {
+    color: #473558 !important;
+    font-family: gloria !important;
+    text-align: left;
+    background-color: #f3fcd1;
+    border-style: inset;
+    border-color: #3eff68;
+    margin-top: -3px;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .devil {
+    background-color: #212121;
+    width: 100vw;
+    height: 4em;
+    position: relative;
+    padding-top: 1em;
+    margin-top: 3em;
+  }
+  .content > p {
+    color: antiquewhite !important;
+    background-color: #92c972;
+    margin: 0em 0em 0em 0em;
+    padding: 1.5em;
+    width: 96%;
+  }
+
+  .colla {
+    margin: 0em 0em 0em 0em;
+    width: 680px;
+  }
+
+  #Yourwallet {
+    margin-left: 25em;
+    margin-top: -4em;
+    margin-right: 23px;
+    text-shadow: #91f350 1px 1px;
+    position: relative;
+    top: 10em;
+  }
+  #Yourweirdosstaked {
+    margin-left: 25em;
+    margin-top: -4em;
+    margin-right: 23px;
+    text-shadow: #91f350 1px 1px;
+    top: 17.5em;
+    position: relative;
+  }
+
+  #WalletD {
+    margin-left: 25em;
+    margin-top: -4em;
+    margin-right: 23px;
+    text-shadow: #91f350 1px 1px;
+    position: relative;
+    top: 14em;
+  }
+  #Your_WeirdosD {
+    text-shadow: #91f350 1px 1px;
+    font-size: 3em;
+    margin-top: -1em;
+    position: relative;
+    left: 4em;
+    top: 5.5em;
+  }
+}
+
+@media screen and (min-width: 1350px) and (max-width: 1850px) {
+  .container {
+    background-size: 1920px 950px;
+    width: auto;
+    height: 900px;
+  }
+  .alfaCont {
+    background-image: url(./res/1850.jpg);
+    background-size: 1850px 950px;
+    height: 950px;
+  }
+  .leftBox {
+    min-width: 320px;
+    max-width: 320px;
+    max-height: 900px;
+
+    margin-left: -20em;
+    margin-top: 14em;
+  }
+  .leftBoxContent {
+    padding-top: 0em;
+    padding-left: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    left: 9em;
+    top: 2em;
+  }
+  .rightBox {
+    min-width: 950px;
+    max-width: 950px;
+    max-height: 900px;
+    position: relative;
+
+    left: 11em;
+    top: 7em;
+  }
+  .rightBoxContent {
+    padding: 0em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /**/
+  .statisticList {
+    padding: 0px;
+    font-size: 14px;
+    text-align: left;
+  }
+  .statistics {
+    padding: 0px;
+    font-size: 44px;
+    font-weight: 900;
+    margin-top: -2em;
+    margin-bottom: 0px;
+    font-stretch: condensed;
+    text-align: left;
+    margin-left: 0em;
+  }
+  .quant {
+    padding: 0;
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: px;
+    margin-top: -15px;
+    text-align: left;
+  }
+  .weirdTrio > img {
+    width: 17em;
+    margin-top: -15px;
+    margin-left: -15px;
+  }
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 0.5em;
+    line-height: 12px;
+    margin-left: -3px;
+  }
+
+  .weirdos {
+    margin-top: calc(5em + 5%);
+    width: 80%;
+    height: 31em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em 0.5em;
+  }
+
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 0.5em;
+    line-height: 12px;
+    margin-left: -3px;
+  }
+  .emptyWeirdo {
+    height: 14.7em;
+    width: 10.5em;
+    position: relative;
+    background-color: rgb(61, 25, 83);
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #1d5507;
+    border-width: 1.5px;
+  }
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 1em 1em 0em 1em;
+    line-height: 12px;
+    color: aliceblue !important;
+  }
+  .emptyWeirdo > img {
+    position: relative;
+    top: 3%;
+    left: 0%;
+    width: 94%;
+    height: 68%;
+  }
+
+  .emptyWeirdo {
+    height: 14.5em;
+    width: 10.5em;
+    position: relative;
+    background-color: rgb(61, 25, 83);
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #1d5507;
+    border-width: 1.5px;
+  }
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 1em 1em 0em 1em;
+    line-height: 12px;
+    margin-left: -3px;
+    color: aliceblue !important;
+  }
+  .emptyWeirdo > img {
+    position: relative;
+    top: 2.5%;
+    left: 0%;
+    width: 93.5%;
+    height: 66%;
+  }
+  .st1 {
+    top: -6em;
+    position: relative;
+    text-align: right;
+  }
+  .st2 {
+    top: -4em;
+    position: relative;
+    text-align: center;
+  }
+  .st3 {
+    top: -6em;
+    position: relative;
+    text-align: left;
+  }
+  .yellowBand {
+    padding: 0px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    background-color: rgb(112, 255, 83);
+    border-radius: 8px;
+    width: 94%;
+    margin: 3% 3% -2% 3%;
+  }
+  .navItems {
+    font-size: 0.9em;
+    margin-top: 0.5em;
+  }
+  .cummulative::before {
+    content: "";
+    position: absolute;
+    top: -17px;
+    left: -15px;
+    width: 4.1em;
+    height: 4.1em;
+    background-image: url(./res/GOLD.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    opacity: 1;
+  }
+
+  .foot {
+    position: absolute;
+    background-color: #10011f;
+    width: 100vw;
+    padding: 0em;
+    display: block;
+  }
+  .foot2 {
+    margin: 4em 0em 0em 0em;
+    display: -webkit-inline-box;
+  }
+
+  .whitespace {
+    width: 35%;
+    width: 300px;
+    text-align: left;
+    margin-top: -1.3em;
+    color: #eee;
+    margin-right: 3em;
+    margin-left: 0em;
+    font-size: 14px;
+  }
+
+  .foot2 > .colla > *,
+  .collapsible {
+    color: #473558 !important;
+    font-family: gloria !important;
+    text-align: left;
+    background-color: #f3fcd1;
+    border-style: inset;
+    border-color: #3eff68;
+    margin-top: -3px;
+    width: 100%;
+  }
+
+  .devil {
+    background-color: #212121;
+    width: 100vw;
+    height: 4em;
+    position: relative;
+    padding-top: 1em;
+    margin-top: 3em;
+  }
+  .content > p {
+    color: antiquewhite !important;
+    background-color: #92c972;
+    margin: 0em 0em 0em 0em;
+    padding: 1.5em;
+    width: 94%;
+  }
+
+  .colla {
+    margin: 0em 0em 0em 0em;
+    width: 800px;
+  }
+
+  #Yourwallet {
+    margin-left: 32em;
+    margin-top: -4em;
+    margin-right: 23px;
+    text-shadow: #91f350 1px 1px;
+    position: relative;
+    top: -2.5em;
+  }
+  #Yourweirdosstaked {
+    margin-left: 32em;
+    margin-top: -4em;
+    margin-right: 23px;
+    text-shadow: #91f350 1px 1px;
+    top: 5em;
+    position: relative;
+  }
+
+  #WalletD {
+    margin-left: 32em;
+    margin-top: -4em;
+    margin-right: 23px;
+    text-shadow: #91f350 1px 1px;
+    position: relative;
+    top: 8em;
+    right: 4em;
+  }
+  #Your_WeirdosD {
+    text-shadow: #91f350 1px 1px;
+    font-size: 5em;
+    margin-top: -1em;
+    position: relative;
+    left: 2.5em;
+    top: 2em;
+  }
+}
+
+@media screen and (min-width: 1851px) and (max-width: 4000px) {
+  .container {
+    height: 780px;
+    /* background-image: url(./res/01-2.jpg); */
+  }
+  .leftBox {
+    width: 35%;
+    width: 400px;
+    max-height: 900px;
+  }
+
+  .leftBoxContent {
+    padding-top: 14em;
+    padding-left: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .rightBox {
+    width: 60%;
+    width: 1000px;
+    max-height: 900px;
+
+    padding-top: 10em;
+  }
+  #Yourwallet {
+    margin-top: 1.2em;
+  }
+  .statisticList {
+    padding: 0px;
+    font-size: 14px;
+    text-align: left;
+  }
+  .statistics {
+    padding: -0px;
+    font-size: 54px;
+    font-weight: 900;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-stretch: condensed;
+    text-align: left;
+  }
+  .quant {
+    padding: 0;
+    font-size: 48px;
+    font-weight: 300;
+    margin-bottom: px;
+    margin-top: -15px;
+    text-align: left;
+  }
+  .weirdTrio > img {
+    width: 20em;
+    margin-top: -20px;
+    margin-left: -25px;
+  }
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 0.5em;
+    line-height: 12px;
+    margin-left: -3px;
+  }
+  .weirdos {
+    margin-top: calc(5em + 5%);
+    width: 96%;
+    height: 31em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1em 0em;
+  }
+  .emptyWeirdo {
+    height: 14.7em;
+    width: 10.5em;
+    position: relative;
+    background-color: rgb(61, 25, 83);
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #1d5507;
+    border-width: 1.5px;
+  }
+  .weirdMessage {
+    font-size: 9px;
+    justify-content: center;
+    text-align: left;
+    padding: 1em 1em 0em 1em;
+    line-height: 12px;
+    color: aliceblue !important;
+  }
+  .emptyWeirdo > img {
+    position: relative;
+    top: 3%;
+    left: 0%;
+    width: 94%;
+    height: 68%;
+  }
+  .st1 {
+    top: -6em;
+    position: relative;
+    text-align: right;
+  }
+  .st2 {
+    top: -4em;
+    position: relative;
+    text-align: center;
+  }
+  .st3 {
+    top: -6em;
+    position: relative;
+    text-align: left;
+  }
+  .yellowBand {
+    padding: 0px;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+    background-color: rgb(112, 255, 83);
+    border-radius: 8px;
+    width: 94%;
+    margin: 3% 3% -2% 3%;
+  }
+  .foot {
+    position: absolute;
+    background-color: #10011f;
+    width: 100vw;
+    padding: 0em;
+    display: block;
+  }
+  .foot2 {
+    margin: 4em 0em 0em 0em;
+    display: -webkit-inline-box;
+  }
+
+  .whitespace {
+    width: 35%;
+    width: 350px;
+    text-align: left;
+    margin-top: -1.3em;
+    color: #eee;
+    margin-right: 4em;
+    margin-left: 1em;
+  }
+
+  .foot2 > .colla > *,
+  .collapsible {
+    color: #473558 !important;
+    font-family: gloria !important;
+    text-align: left;
+    background-color: #f3fcd1;
+    border-style: inset;
+    border-color: #3eff68;
+    margin-top: -3px;
+    width: 100%;
+  }
+
+  .devil {
+    background-color: #212121;
+    width: 100vw;
+    height: 4em;
+    position: relative;
+    padding-top: 1em;
+    margin-top: 3em;
+  }
+  .content > p {
+    color: antiquewhite !important;
+    background-color: #92c972;
+    margin: 0em 0em 0em 0em;
+    padding: 1.5em 1.5em 1.5em 1.5em;
+    width: 96%;
+  }
+
+  .colla {
+    margin: 0em 0em 0em 0em;
+    width: 1000px;
+  }
+
+  #Yourwallet,
+  #Yourweirdosstaked,
+  #WalletD {
+    margin-left: 30em;
+    margin-top: 2em;
+    text-shadow: #91f350 1px 1px;
+  }
+  #Your_WeirdosD {
+    text-shadow: #91f350 1px 1px;
+    font-size: 4em;
+    position: relative;
+    left: 2.5em;
+    top: 1.5em;
+    font-size: 90px;
+    text-align: right;
+  }
+}
