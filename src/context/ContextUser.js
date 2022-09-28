@@ -3,6 +3,7 @@ import React, { createContext, useState } from "react";
 import Moralis from 'moralis-v1';
 
 import { useContext, useEffect } from 'react';
+import { StakeABi } from "../ABI/Stake";
 
 import axios from "axios";
 
@@ -21,7 +22,7 @@ export const UserProvider = ({ children }) => {
     const [Token, setToken] = useState('');
     const URL = "http://localhost:5000";
     const ContratNft1 = '0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5'
-    const ContratStake = '0xa12c05E1b8D9CB1D2B07E7a1FAbDdBb3040260da'
+    const ContratStake = '0x00A4d4032890a8E8541Ced702023b47A2F0AB1fD'
     const ContratToken = '0x410ce9E4B6B15Ec2d86443461ad372B4A381bA09'
     const ApiNFt = "https://weirdometada.com/"
     const [Nfts, setNfts] = useState([])
@@ -40,6 +41,9 @@ export const UserProvider = ({ children }) => {
     const [Statistics5, setStatistics5] = useState(0)
 
 
+    const [EsApro, setEsApro] = useState()
+
+
     Moralis.start({ serverUrl, appId });
 
     /* Authentication code */
@@ -55,7 +59,6 @@ export const UserProvider = ({ children }) => {
 
                     await getChallenge(user.get("ethAddress"));
 
-                    await BuscarNft()
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -115,8 +118,123 @@ export const UserProvider = ({ children }) => {
 
     }
 
+    const Stakeall = async () => {
+        if (Token === "") return console.log("no hay token");
+        let MisNFt = []
+        Nfts.map(rest => {
+            MisNFt.push(rest.id)
+        })
+        console.log(MisNFt)
 
 
+
+        const sendOptions = {
+        chain: "polygon",
+        contractAddress: ContratStake,
+        functionName: "stakeBatch",
+        abi: StakeABi,
+        params: { tokenIds: MisNFt, _collection: ContratNft1 },
+        };
+    
+        if (!Moralis.isWeb3Enabled()) {
+        await Moralis.deactivateWeb3();
+        await Moralis.enableWeb3();
+        console.log("web3 is ", Moralis.isWeb3Enabled());
+        }
+        console.log("web3 is ", Moralis.isWeb3Enabled());
+    
+        const transaction = await Moralis.executeFunction(sendOptions);
+    
+        await transaction.wait();
+
+        if (transaction) {
+            console.log(transaction);
+            Nfts.map(async rest => {
+                
+                await axios
+                .post(
+                    `${URL}/nft/add`,
+                    {
+                    name: rest.name,
+                    token_id: rest.id,
+                    attributes: rest.attributes,
+                    transaction_hash: transaction.hash,
+                    collAdd: ContratNft1,
+                    },
+                    {
+                    headers: {
+                        authorization: `Bearer ${Token}`,
+                    },
+                    }
+                )
+                .then((resp) => {
+                    setRefresca(!Refresca)
+                });
+            })
+
+          }
+
+    }
+    const UnStakeall = async () => {
+        if (Token === "") return console.log("no hay token");
+        let MisNFt = []
+        NftsInStake.map(rest => {
+            MisNFt.push(rest.id)
+        })
+        console.log(MisNFt)
+
+
+
+        const sendOptions = {
+        chain: "polygon",
+        contractAddress: ContratStake,
+        functionName: "unstakeBatch",
+        abi: StakeABi,
+        params: { tokenIds: MisNFt, _collection: ContratNft1 },
+        };
+    
+        if (!Moralis.isWeb3Enabled()) {
+        await Moralis.deactivateWeb3();
+        await Moralis.enableWeb3();
+        console.log("web3 is ", Moralis.isWeb3Enabled());
+        }
+        console.log("web3 is ", Moralis.isWeb3Enabled());
+    
+        const transaction = await Moralis.executeFunction(sendOptions);
+    
+        await transaction.wait();
+
+        if (transaction) {
+            console.log(transaction);
+            NftsInStake.map(async rest => {
+                
+                await axios
+                .delete(`${URL}/nft/deleteStake/${rest.id}`, {
+                  headers: {
+                    authorization: `Bearer ${Token}`,
+                  },
+                })
+                .then((resp) =>{
+                  setRefresca(!Refresca)
+                });
+            })
+
+          }
+
+    }
+    const YaAprobo = async (user) => {
+  
+        const options = {
+            chain: "polygon",
+            address:ContratNft1,
+            function_name: "isApprovedForAll",
+            abi: nftAbi,
+            params: { owner:  user, operator: ContratStake},
+          };
+          const allowance = await Moralis.Web3API.native.runContractFunction(options)
+   
+          setEsApro(allowance)
+    }
 
     const BuscarNft = async () => {
         const options = {
@@ -191,13 +309,15 @@ export const UserProvider = ({ children }) => {
             method: "get",
             url: `${URL}/user/auth/${data1[1].value}/${data}`,
 
-        }).then((response) => {
+        }).then(async(response)  => {
 
 
             if (response.data.status) {
 
                 setToken(response.data.token)
-                localStorage.setItem('asdasd', response.data.token);
+                 localStorage.setItem('asdasd', response.data.token);
+
+    
             } else {
                 console.log("Signature not verified");
             }
@@ -266,10 +386,18 @@ export const UserProvider = ({ children }) => {
                 'authorization': `Bearer ${Token}`
             }
         }).then(async (resp) => {
-
+            setRefresca(!Refresca)
 
         }).catch((err) => console.log(err))
     }
+    
+    useEffect(() => {
+        let user = Moralis.User.current();
+         BuscarNft()
+         YaAprobo(user.get("ethAddress"))             
+         StakeinNft()
+         NftStatistics()
+    },[Token])
 
     return (
 
@@ -284,8 +412,7 @@ export const UserProvider = ({ children }) => {
             ApiNFt,
             ContratToken, Refresca, setRefresca, setNfts, setNftsInStake, Nfts, NftsInStake, MisPuntos, setMisPuntos, Statistics1, Statistics2, Statistics3, Statistics4, Statistics5,
             login,
-            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT
-
+            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT, YaAprobo, EsApro, Stakeall, UnStakeall
 
         }}>
             {children}

@@ -14,7 +14,7 @@ export function Header(props){
     Nfts,
     setNfts,
     NftsInStake,
-    setNftsInStake, Refresca, setRefresca,  MisPuntos, setMisPuntos, login, logOut, AproNFT} = useContext(UserContext)
+    setNftsInStake, Refresca, setRefresca,  MisPuntos, setMisPuntos, login, logOut, AproNFT, ClaimReawrd, EsApro, Stakeall, UnStakeall} = useContext(UserContext)
 
     const AproToken = async () => {
         const sendOptions = {
@@ -43,6 +43,9 @@ export function Header(props){
         }
     
       }
+
+
+
     return(
         <>  
         <div className="headerBar">
@@ -58,11 +61,14 @@ export function Header(props){
                             <li><a href="https://opensea.io/collection/underworldweirdos-main" to="https://opensea.io/collection/underworldweirdos-main">Collection</a></li>
                             <li><a href="https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0xc586a4a0db0bc1169d490b8fbf0633cc06d0f0d3" to="https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0xc586a4a0db0bc1169d490b8fbf0633cc06d0f0d3">Token</a></li>
                             <li><a href="#foot" id="goFoot" >FAQ</a></li>
-                            <li><a  id="aprobar" onClick={AproNFT}>Approve Stake</a></li>
+                            { EsApro? <li><a   id="special" onClick={Stakeall} >Stake All</a></li>: <li> <a  id="aprobar" onClick={AproNFT}>Approve Stake</a></li> }
+                            
                             <li><a  id="token" onClick={AproToken}>Approve Token</a></li>
-                            <li><a   id="special" >Approve Special</a></li>
+                            {/* <li><a   id="special" >Approve Special</a></li> */}
+                            
+                            <li><a   id="special" onClick={UnStakeall}>UnStake All</a></li>
 
-                            <li className="uwuClaim " ><div className="cummulative" id="Your_Reward">{MisPuntos.toFixed(2)} </div> <a  to="#">
+                            <li className="uwuClaim" onClick={ClaimReawrd} ><div className="cummulative" id="Your_Reward">{MisPuntos.toFixed(2)} </div> <a  to="#">
                                 <div className="claimButton hide"  id="Claim">Claim Rewards</div>
                                 {
                                     Token == ""? ( <div className="claimButton" id="connectWallet" onClick={login}>Connect</div>) : ( <div className="claimButton" id="connectWallet" onClick={logOut}>Disconnect</div>)

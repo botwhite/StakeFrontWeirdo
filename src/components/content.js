@@ -27,7 +27,7 @@ export function Content() {
     ApiNFt,
     ContratToken, Refresca, setRefresca, setNfts, setNftsInStake, Nfts, NftsInStake, MisPuntos, setMisPuntos, Statistics1, Statistics2, Statistics3, Statistics4, Statistics5,
     login,
-    logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft } = useContext(UserContext)
+    logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, YaAprobo } = useContext(UserContext)
 
 
 
@@ -40,17 +40,13 @@ export function Content() {
     } else {
       setMyUser(user.get("ethAddress"))
      // getChallenge(user.get("ethAddress"));
-      BuscarNft()
+      // BuscarNft()
+      // YaAprobo()
+
 
     }
   }, []);
 
-  useEffect(() => {
-
-    StakeinNft()
-    NftStatistics()
-
-  }, [Token]);
 
   useEffect(() => {
 
