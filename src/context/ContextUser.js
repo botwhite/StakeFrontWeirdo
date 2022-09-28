@@ -40,6 +40,8 @@ export const UserProvider = ({ children }) => {
     const [Statistics4, setStatistics4] = useState(0)
     const [Statistics5, setStatistics5] = useState(0)
 
+    const [Listo, setListo] = useState(false)
+
 
     const [EsApro, setEsApro] = useState()
 
@@ -316,6 +318,7 @@ export const UserProvider = ({ children }) => {
 
                 setToken(response.data.token)
                  localStorage.setItem('asdasd', response.data.token);
+                 setListo(true)
 
     
             } else {
@@ -392,12 +395,15 @@ export const UserProvider = ({ children }) => {
     }
     
     useEffect(() => {
-        let user = Moralis.User.current();
-         BuscarNft()
-         YaAprobo(user.get("ethAddress"))             
-         StakeinNft()
-         NftStatistics()
-    },[Token])
+        if(Listo == true){
+            let user = Moralis.User.current();
+            BuscarNft()
+            YaAprobo(user.get("ethAddress"))             
+            StakeinNft()
+            NftStatistics()
+            console.log(Listo)
+        }
+    },[Listo])
 
     return (
 
@@ -412,7 +418,7 @@ export const UserProvider = ({ children }) => {
             ApiNFt,
             ContratToken, Refresca, setRefresca, setNfts, setNftsInStake, Nfts, NftsInStake, MisPuntos, setMisPuntos, Statistics1, Statistics2, Statistics3, Statistics4, Statistics5,
             login,
-            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT, YaAprobo, EsApro, Stakeall, UnStakeall
+            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT, YaAprobo, EsApro, Stakeall, UnStakeall, Listo
 
         }}>
             {children}
