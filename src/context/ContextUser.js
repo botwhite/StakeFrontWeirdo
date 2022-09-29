@@ -165,7 +165,8 @@ export const UserProvider = ({ children }) => {
                     },
                     {
                     headers: {
-                        authorization: `Bearer ${Token}`,
+                                      authorization: `Bearer ${Token}`,
+              'Access-Control-Request-Private-Network': 'true'
                     },
                     }
                 )
@@ -213,7 +214,8 @@ export const UserProvider = ({ children }) => {
                 await axios
                 .delete(`${URL}/nft/deleteStake/${rest.id}`, {
                   headers: {
-                    authorization: `Bearer ${Token}`,
+                                  authorization: `Bearer ${Token}`,
+              'Access-Control-Request-Private-Network': 'true'
                   },
                 })
                 .then((resp) =>{
@@ -334,7 +336,8 @@ export const UserProvider = ({ children }) => {
     const StakeinNft = async () => {
         await axios.get(`${URL}/nft/NftStake`, {
             headers: {
-                'authorization': `Bearer ${Token}`
+                              authorization: `Bearer ${Token}`,
+              'Access-Control-Request-Private-Network': 'true'
             }
         }).then(async (resp) => {
 
@@ -369,7 +372,8 @@ export const UserProvider = ({ children }) => {
     const NftStatistics = async () => {
         await axios.get(`${URL}/nft/NftStatistics/${ContratNft1}`, {
             headers: {
-                'authorization': `Bearer ${Token}`
+                              authorization: `Bearer ${Token}`,
+              'Access-Control-Request-Private-Network': 'true'
             }
         }).then(async (resp) => {
 
@@ -386,7 +390,8 @@ export const UserProvider = ({ children }) => {
     const ClaimReawrd = async () => {
         await axios.get(`${URL}/nft/ClaimTokenReward`, {
             headers: {
-                'authorization': `Bearer ${Token}`
+                              authorization: `Bearer ${Token}`,
+              'Access-Control-Request-Private-Network': 'true'
             }
         }).then(async (resp) => {
             setRefresca(!Refresca)

@@ -45,7 +45,8 @@ function Cards(props) {
           },
           {
             headers: {
-              authorization: `Bearer ${Token}`,
+                            authorization: `Bearer ${Token}`,
+              'Access-Control-Request-Private-Network': 'true'
             },
           }
         )
@@ -83,7 +84,8 @@ function Cards(props) {
       await axios
         .delete(`${URL}/nft/deleteStake/${props.id}`, {
           headers: {
-            authorization: `Bearer ${Token}`,
+                          authorization: `Bearer ${Token}`,
+              'Access-Control-Request-Private-Network': 'true'
           },
         })
         .then((resp) =>{
