@@ -1,7 +1,7 @@
 import React, { createContext, useState } from "react";
 
 import Moralis from 'moralis-v1';
-
+import Swal from 'sweetalert2'
 import { useContext, useEffect } from 'react';
 import { StakeABi } from "../ABI/Stake";
 

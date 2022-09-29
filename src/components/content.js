@@ -62,8 +62,11 @@ export function Content() {
     <>
       <Header></Header>
       <div className="alfaCont">
-        <div className="uwuClaim mobileUwuClaim" ><div className="cummulative" id="Your_RewardM"> 666666</div> <a href="void(0)">
-          <div className="claimButton" id="connectWalletM" >Connect</div>
+        <div className="uwuClaim mobileUwuClaim" ><div className="cummulative" id="Your_RewardM"> {MisPuntos.toFixed(2)}</div> <a href="void(0)">
+          
+          {
+                                    Token == ""? ( <div className="claimButton" id="connectWallet" onClick={login}>Connect</div>) : ( <div className="claimButton" id="connectWallet" onClick={logOut}>Disconnect</div>)
+                                }
           <div className="claimButton hide" id="ClaimM" >Claim Rewards</div>
         </a></div>
         <div className="leftBox">

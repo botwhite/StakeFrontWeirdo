@@ -138,9 +138,13 @@ export function Header(props){
                         </li>
                         
                         
-                        <li><a  id="aprobarM" >Approve Stake</a></li>
-                        <li><a  id="tokenM" >Approve Token</a></li>
-                        <li><a  id="specialM" >Approve Special</a></li>
+                        { EsApro? <li><a   id="special" onClick={Stakeall} >Stake All</a></li>: <li> <a  id="aprobar" onClick={AproNFT}>Approve Stake</a></li> }
+
+                            
+                        <li><a  id="token" onClick={AproToken}>Approve Token</a></li>
+                            {/* <li><a   id="special" >Approve Special</a></li> */}
+                            
+                            <li><a   id="special" onClick={UnStakeall}>UnStake All</a></li>
                         
 
                         <div className="contMobSocialButtons">
