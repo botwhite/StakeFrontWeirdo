@@ -1,5 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
 import logo02 from "../res/Logo-02.png"
+import LogoDiscord from "../res/discord.png"
+import LogoTwitter from "../res/twitter.svg"
+import LogoInsta from "../res/insta.svg"
 import Moralis from 'moralis-v1';
 import { UserContext } from "../context/ContextUser"
 import { TokenABi } from '../ABI/Token';
@@ -77,16 +80,16 @@ export function Header(props){
 
                             </li>
                             <li className="socialButtons"><a  to="#">
-                                <img src="res/62fca40cea0f2647f8c1e172_af-discord-logo.png" alt=""></img>
+                                <img src={LogoDiscord} alt=""></img>
                             </a>
                             </li>
                             <li className="socialButtons"><a  to="#">
-                                <img src="res/62fca4a04544ed44ab2aa247_twitter-svgrepo-com.svg" alt=""></img>
+                                <img src={LogoTwitter} alt=""></img>
                             </a>
                             </li>
                             <li className="socialButtons" >
                                 <a  to="#">
-                                    <img src="res/62fca5fabaea0e6f942eea96_af-insta-icon.svg" alt=""></img>
+                                    <img src={LogoInsta}  alt=""></img>
                                 </a>
                             </li>
                             <li > 
@@ -142,15 +145,15 @@ export function Header(props){
 
                         <div className="contMobSocialButtons">
                             <li className="socialButtons mobSocialButtons"><a >
-                                <img src="res/62fca40cea0f2647f8c1e172_af-discord-logo.png" alt=""></img>
+                                <img src={LogoDiscord} alt=""></img>
                             </a>
                             </li>
                             <li className="socialButtons mobSocialButtons"><a >
-                                <img src="res/62fca4a04544ed44ab2aa247_twitter-svgrepo-com.svg" alt=""></img>
+                                <img src={LogoTwitter} alt=""></img>
                             </a>
                             </li>
                             <li className="socialButtons mobSocialButtons" ><a >
-                                <img src="res/62fca5fabaea0e6f942eea96_af-insta-icon.svg" alt=""></img>
+                                <img src={LogoInsta} alt=""></img>
                             </a>
                             </li>
                         </div> 

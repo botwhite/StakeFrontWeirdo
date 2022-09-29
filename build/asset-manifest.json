@@ -9,8 +9,8 @@
     "static/js/3.b49bb3bc.chunk.js": "/static/js/3.b49bb3bc.chunk.js",
     "static/js/3.b49bb3bc.chunk.js.map": "/static/js/3.b49bb3bc.chunk.js.map",
     "main.css": "/static/css/main.ce760edc.chunk.css",
-    "main.js": "/static/js/main.3e3a3a6b.chunk.js",
-    "main.js.map": "/static/js/main.3e3a3a6b.chunk.js.map",
+    "main.js": "/static/js/main.0a321641.chunk.js",
+    "main.js.map": "/static/js/main.0a321641.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.74552977.js",
     "runtime-main.js.map": "/static/js/runtime-main.74552977.js.map",
     "static/js/6.8092f221.chunk.js": "/static/js/6.8092f221.chunk.js",
@@ -45,12 +45,14 @@
     "static/js/2.0c900755.chunk.js.LICENSE.txt": "/static/js/2.0c900755.chunk.js.LICENSE.txt",
     "static/js/6.8092f221.chunk.js.LICENSE.txt": "/static/js/6.8092f221.chunk.js.LICENSE.txt",
     "static/media/App.css": "/static/media/papel.2500446e.png",
-    "static/media/Logo-02.97cd70ee.png": "/static/media/Logo-02.97cd70ee.png"
+    "static/media/Logo-02.97cd70ee.png": "/static/media/Logo-02.97cd70ee.png",
+    "static/media/insta.f3eb0b5e.svg": "/static/media/insta.f3eb0b5e.svg",
+    "static/media/twitter.5af9ad4a.svg": "/static/media/twitter.5af9ad4a.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.74552977.js",
     "static/js/6.8092f221.chunk.js",
     "static/css/main.ce760edc.chunk.css",
-    "static/js/main.3e3a3a6b.chunk.js"
+    "static/js/main.0a321641.chunk.js"
   ]
 }
