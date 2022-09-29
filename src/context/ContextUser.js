@@ -20,7 +20,7 @@ export const UserProvider = ({ children }) => {
 
     const [MyUser, setMyUser] = useState('');
     const [Token, setToken] = useState('');
-    const URL = "http://localhost:5000";
+    const URL = "https://stakeapi.weirdometada.com/";
     const ContratNft1 = '0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5'
     const ContratStake = '0x00A4d4032890a8E8541Ced702023b47A2F0AB1fD'
     const ContratToken = '0x410ce9E4B6B15Ec2d86443461ad372B4A381bA09'
