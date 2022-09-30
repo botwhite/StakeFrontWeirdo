@@ -82,7 +82,7 @@ function Cards(props) {
       console.log(transaction);
 
       await axios
-        .delete(`${URL}/nft/deleteStake/${props.id}`, {
+        .delete(`${URL}/nft/deleteStake/${props.id}/${ContratNft1}`, {
           headers: {
                           authorization: `Bearer ${Token}`,
               'Access-Control-Request-Private-Network': 'true'
@@ -99,7 +99,7 @@ function Cards(props) {
       {props.estado == "stake" ? (
         <div className="emptyWeirdo  checkW" onClick={UnStake}>
           <img src={props.img} alt="weirdo"></img>
-          <div className="yellowBand">{props.name} + {props.puntos.toFixed(2)}</div>
+          <div className="yellowBand">{props.name} - {props.puntos.toFixed(2)}UWU</div>
           <div className="weirdMessage">
             "random message lorem ipsum, dolor sit amet"
           </div>

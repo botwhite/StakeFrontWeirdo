@@ -17,7 +17,7 @@ export function Content() {
 
 
 
-  const {             MyUser,
+  const { MyUser,
     setMyUser,
     Token,
     setToken,
@@ -27,7 +27,7 @@ export function Content() {
     ApiNFt,
     ContratToken, Refresca, setRefresca, setNfts, setNftsInStake, Nfts, NftsInStake, MisPuntos, setMisPuntos, Statistics1, Statistics2, Statistics3, Statistics4, Statistics5,
     login,
-    logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, YaAprobo, Listo } = useContext(UserContext)
+    logOut, StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, YaAprobo, Listo } = useContext(UserContext)
 
 
 
@@ -39,7 +39,7 @@ export function Content() {
       login()
     } else {
       setMyUser(user.get("ethAddress"))
-     // getChallenge(user.get("ethAddress"));
+      // getChallenge(user.get("ethAddress"));
       // BuscarNft()
       // YaAprobo()
 
@@ -49,7 +49,7 @@ export function Content() {
 
 
   useEffect(() => {
-    if(Listo == true){
+    if (Listo == true) {
       StakeinNft()
       BuscarNft()
       NftStatistics()
@@ -62,11 +62,11 @@ export function Content() {
     <>
       <Header></Header>
       <div className="alfaCont">
-        <div className="uwuClaim mobileUwuClaim" ><div className="cummulative" id="Your_RewardM"> {MisPuntos.toFixed(2)}</div> <a href="void(0)">
-          
+        <div className="uwuClaim mobileUwuClaim" ><div className="cummulative" id="Your_RewardM"> {MisPuntos.toFixed(2)}</div> <a >
+
           {
-                                    Token == ""? ( <div className="claimButton" id="connectWallet" onClick={login}>Connect</div>) : ( <div className="claimButton" id="connectWallet" onClick={logOut}>Disconnect</div>)
-                                }
+            Token == "" ? (<div className="claimButton" id="connectWallet" onClick={login}>Connect</div>) : (<div className="claimButton" id="connectWallet" onClick={logOut}>Disconnect</div>)
+          }
           <div className="claimButton hide" id="ClaimM" >Claim Rewards</div>
         </a></div>
         <div className="leftBox">
@@ -79,7 +79,7 @@ export function Content() {
                   <i></i>
                 </div>
                 <div className="quant" id="holders">
-                {Statistics1} 
+                  {Statistics1}
 
                 </div>
 
@@ -95,7 +95,7 @@ export function Content() {
                 </div>
                 <div className="quant" id="trait1Total">
 
-                {Statistics2} 
+                  {Statistics2}
 
 
                 </div>
@@ -110,7 +110,7 @@ export function Content() {
                   <i></i>
                 </div>
                 <div className="quant" id="trait1">
-                {Statistics3} 
+                  {Statistics3}
 
 
 
@@ -126,7 +126,7 @@ export function Content() {
                   <i></i>
                 </div>
                 <div className="quant" id="trait2">
-                {Statistics4} 
+                  {Statistics4}
 
 
                 </div>
@@ -141,7 +141,7 @@ export function Content() {
                   <i></i>
                 </div>
                 <div className="quant" id="trait3">
-                {Statistics5} 
+                  {Statistics5}
 
 
                 </div>
@@ -164,7 +164,7 @@ export function Content() {
         <div className="rightBox">
           <div className="rightBoxContent" id="rightBoxContent">
 
-            <div id="WalletD" >11111111111111111111111</div>
+            <div id="WalletD" >{MyUser.substring(0, 8)}</div>
             <div id="Your_WeirdosD"> {NftsInStake.length}/ {Nfts.length + NftsInStake.length}
             </div>
             <div className="weirdos" id="weirdosAll">
@@ -176,13 +176,13 @@ export function Content() {
               })}
 
               {
-              
-              NftsInStake.map((res, i) => {
-                return (
-                  <Cards key={i} name={res.name} id={res.id} attributes={res.attributes} img={res.img} estado={"stake"} puntos={res.puntos} />
-                )
 
-              })}
+                NftsInStake.map((res, i) => {
+                  return (
+                    <Cards key={i} name={res.name} id={res.id} attributes={res.attributes} img={res.img} estado={"stake"} puntos={res.puntos} />
+                  )
+
+                })}
 
 
             </div>
