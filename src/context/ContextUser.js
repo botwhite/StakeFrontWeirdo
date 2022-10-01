@@ -22,9 +22,9 @@ export const UserProvider = ({ children }) => {
     const [Token, setToken] = useState('');
     const URL = "http://localhost:5000";
     //const URL = "https://stakeapi.weirdometada.com";
-    const ContratNft1 = '0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5'
-    const ContratStake = '0x00A4d4032890a8E8541Ced702023b47A2F0AB1fD'
-    const ContratToken = '0x410ce9E4B6B15Ec2d86443461ad372B4A381bA09'
+    const ContratNft1 = '0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b'
+    const ContratStake = '0x57d285b45A57702d725176228b151fc405C98D28'
+    const ContratToken = '0x79E8D08b5e4E1a5faaFBa21c442Be75775b08ce5'
     const ApiNFt = "https://weirdometada.com/"
     const [Nfts, setNfts] = useState([])
     const [NftsInStake, setNftsInStake] = useState([])
@@ -238,14 +238,14 @@ export const UserProvider = ({ children }) => {
           };
           const allowance = await Moralis.Web3API.native.runContractFunction(options)
    
-          setEsApro(allowance)
+          setEsApro(true)
     }
 
     const BuscarNft = async () => {
         const options = {
             chain: "polygon",
             address: MyUser,
-            token_address: "0x0aB5f9bC3d004E3492040a38A5Fa76c29b5769f5",
+            token_address: ContratNft1,
         };
         const polygonNFTs = await Moralis.Web3API.account.getNFTsForContract(options);
 
