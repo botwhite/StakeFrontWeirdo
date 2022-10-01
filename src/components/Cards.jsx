@@ -101,7 +101,7 @@ function Cards(props) {
           <img src={props.img} alt="weirdo"></img>
           <div className="yellowBand">{props.name} - {props.puntos.toFixed(2)}UWU</div>
           <div className="weirdMessage">
-            "random message lorem ipsum, dolor sit amet"
+              {props.frase}
           </div>
         </div>
       ) : (
@@ -109,7 +109,8 @@ function Cards(props) {
           <img src={props.img} alt="weirdo"></img>
           <div className="yellowBand">{props.name}  </div>
           <div className="weirdMessage">
-            "random message lorem ipsum, dolor sit amet"
+          {props.frase}
+
           </div>
         </div>
       )}

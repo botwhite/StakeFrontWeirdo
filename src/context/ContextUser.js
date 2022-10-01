@@ -11,6 +11,7 @@ import Web3 from "web3";
 
 import Cards from '../components/Cards';
 import { nftAbi } from '../ABI/Nft';
+import { TokenABi } from '../ABI/Token';
 
 import { Button } from 'react-bootstrap';
 
@@ -45,6 +46,7 @@ export const UserProvider = ({ children }) => {
 
 
     const [EsApro, setEsApro] = useState()
+    const [TokenAproo, setTokenAproo] = useState()
 
 
     Moralis.start({ serverUrl, appId });
@@ -240,6 +242,20 @@ export const UserProvider = ({ children }) => {
    
           setEsApro(allowance)
     }
+    const YaAproboToken = async (user) => {
+  
+        const options = {
+            chain: "polygon",
+            address:ContratToken,
+            function_name: "allowance",
+            abi: TokenABi,
+            params: { owner :  user, spender: ContratStake},
+          };
+          const allowance = await Moralis.Web3API.native.runContractFunction(options)
+   
+          console.log(allowance)
+          setTokenAproo(allowance)
+    }
 
     const BuscarNft = async () => {
         const options = {
@@ -422,7 +438,8 @@ export const UserProvider = ({ children }) => {
             YaAprobo(user.get("ethAddress"))             
             StakeinNft()
             NftStatistics()
-            console.log(Listo)
+            YaAproboToken(user.get("ethAddress"))
+          // console.log(Listo)
         }
     },[Listo])
 
@@ -439,7 +456,7 @@ export const UserProvider = ({ children }) => {
             ApiNFt,
             ContratToken, Refresca, setRefresca, setNfts, setNftsInStake, Nfts, NftsInStake, MisPuntos, setMisPuntos, Statistics1, Statistics2, Statistics3, Statistics4, Statistics5,
             login,
-            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT, YaAprobo, EsApro, Stakeall, UnStakeall, Listo
+            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT, YaAprobo, EsApro, Stakeall, UnStakeall, Listo, TokenAproo, setTokenAproo
 
         }}>
             {children}

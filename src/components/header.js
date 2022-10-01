@@ -37,6 +37,7 @@ export function Header(props) {
     EsApro,
     Stakeall,
     UnStakeall,
+    TokenAproo,
   } = useContext(UserContext);
 
   const AproToken = async () => {
@@ -109,13 +110,12 @@ export function Header(props) {
               FAQ
             </a>
           </li>
-          {EsApro== '' ? (
-
-                        <li>
-                        <a id="aprobar" onClick={AproNFT}>
-                          Approve Stake
-                        </a>
-                      </li>
+          {EsApro == "" ? (
+            <li>
+              <a id="aprobar" onClick={AproNFT}>
+                Approve Stake
+              </a>
+            </li>
           ) : (
             <li>
               <a id="special" onClick={Stakeall}>
@@ -124,20 +124,22 @@ export function Header(props) {
             </li>
           )}
 
-          <li>
-            <a id="token" onClick={AproToken}>
-              Approve Token
-            </a>
-          </li>
-          {/* <li><a   id="special" >Approve Special</a></li> */}
+{TokenAproo < 0 ? (
+                  <li>
+                    <a id="aprobar" onClick={AproToken}>
+                      Approve Token
+                    </a>
+                  </li>
+                ) : (
+                  <li>
+                    <a id="special" onClick={UnStakeall}>
+                      UnStake All
+                    </a>
+                  </li>
+                )}
 
-          <li>
-            <a id="special" onClick={UnStakeall}>
-              UnStake All
-            </a>
-          </li>
 
-          <li className="uwuClaim" >
+          <li className="uwuClaim">
             <div className="cummulative" id="Your_Reward">
               {MisPuntos.toFixed(2)}{" "}
             </div>{" "}
@@ -161,14 +163,14 @@ export function Header(props) {
             </a>
           </li>
           <li className="socialButtons mobSocialButtons">
-                    <a>
-                      {Token == "" ? (
-                        <img src={ImgPrender} onClick={login}  alt=""></img>
-                      ) : (
-                        <img src={ImgApagar} onClick={logOut} alt=""></img>
-                      )}
-                    </a>
-                  </li>
+            <a>
+              {Token == "" ? (
+                <img src={ImgPrender} onClick={login} alt=""></img>
+              ) : (
+                <img src={ImgApagar} onClick={logOut} alt=""></img>
+              )}
+            </a>
+          </li>
           <li className="socialButtons">
             <a to="#">
               <img src={LogoDiscord} alt=""></img>
@@ -190,7 +192,7 @@ export function Header(props) {
             </div>
           </li>
         </ul>
-        <img src={logo02}  className="logoMov hideDesktop" alt=""></img>
+        <img src={logo02} className="logoMov hideDesktop" alt=""></img>
         <div className="toggleButton" onClick={() => setShow(!show)}>
           <label className="hamburger  hideDesktop ">
             <div className="top-bun"></div>
@@ -234,33 +236,33 @@ export function Header(props) {
                   <a>FAQ</a>
                 </li>
 
-                {EsApro ? (
+                {EsApro == "" ? (
+                  <li>
+                    <a id="aprobar" onClick={AproNFT}>
+                      Approve Stake
+                    </a>
+                  </li>
+                ) : (
                   <li>
                     <a id="special" onClick={Stakeall}>
                       Stake All
                     </a>
                   </li>
+                )}
+
+                {TokenAproo > 0 ? (
+                  <li>
+                    <a id="aprobar" onClick={AproToken}>
+                      Approve Token
+                    </a>
+                  </li>
                 ) : (
                   <li>
-                    {" "}
-                    <a id="aprobar" onClick={AproNFT}>
-                      Approve Stake
+                    <a id="special" onClick={UnStakeall}>
+                      UnStake All
                     </a>
                   </li>
                 )}
-
-                <li>
-                  <a id="token" onClick={AproToken}>
-                    Approve Token
-                  </a>
-                </li>
-                {/* <li><a   id="special" >Approve Special</a></li> */}
-
-                <li>
-                  <a id="special" onClick={UnStakeall}>
-                    UnStake All
-                  </a>
-                </li>
 
                 <div className="contMobSocialButtons">
                   <li className="socialButtons mobSocialButtons">
@@ -282,7 +284,7 @@ export function Header(props) {
                   <li className="socialButtons mobSocialButtons">
                     <a>
                       {Token == "" ? (
-                        <img src={ImgPrender} onClick={login}  alt=""></img>
+                        <img src={ImgPrender} onClick={login} alt=""></img>
                       ) : (
                         <img src={ImgApagar} onClick={logOut}></img>
                       )}
