@@ -274,7 +274,7 @@ export function Content() {
             <div className="weirdTrio tooltip">
               <img src={Werido5} alt=""></img>
               <div className="bottom">
-                <p>Bonus traits of the week: <b>Stumble with Lolipop</b> face, <b>Pink Bathrobe</b> clothing (devils and skellys) and <b>Green Octopus </b>head. You can see the bonuses for having one or more of this traits at our <b>FAQ section</b>.</p>
+                <p>These are the bonus traits of the week, you can see the bonuses for having one or more of this traits at our FAQ section.</p>
                 <i></i>
               </div>
             </div>
