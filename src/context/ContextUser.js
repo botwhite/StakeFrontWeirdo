@@ -238,7 +238,7 @@ export const UserProvider = ({ children }) => {
           };
           const allowance = await Moralis.Web3API.native.runContractFunction(options)
    
-          setEsApro(true)
+          setEsApro(allowance)
     }
 
     const BuscarNft = async () => {

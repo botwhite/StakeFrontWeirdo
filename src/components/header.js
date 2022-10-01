@@ -109,17 +109,17 @@ export function Header(props) {
               FAQ
             </a>
           </li>
-          {EsApro ? (
+          {EsApro== '' ? (
+
+                        <li>
+                        <a id="aprobar" onClick={AproNFT}>
+                          Approve Stake
+                        </a>
+                      </li>
+          ) : (
             <li>
               <a id="special" onClick={Stakeall}>
                 Stake All
-              </a>
-            </li>
-          ) : (
-            <li>
-              {" "}
-              <a id="aprobar" onClick={AproNFT}>
-                Approve Stake
               </a>
             </li>
           )}
