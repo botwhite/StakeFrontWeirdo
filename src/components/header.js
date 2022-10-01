@@ -190,7 +190,7 @@ export function Header(props) {
             </div>
           </li>
         </ul>
-        <img src="res/Logo-02.png" className="logoMov hideDesktop" alt=""></img>
+        <img src={logo02}  className="logoMov hideDesktop" alt=""></img>
         <div className="toggleButton" onClick={() => setShow(!show)}>
           <label className="hamburger  hideDesktop ">
             <div className="top-bun"></div>

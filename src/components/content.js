@@ -13,6 +13,8 @@ import { nftAbi } from '../ABI/Nft';
 
 import { Button } from 'react-bootstrap';
 
+import Werido5 from '../res/weirdos-05.png'
+
 export function Content() {
 
 
@@ -64,9 +66,19 @@ export function Content() {
       <div className="alfaCont">
         <div className="uwuClaim mobileUwuClaim" ><div className="cummulative" id="Your_RewardM"> {MisPuntos.toFixed(2)}</div> <a >
 
-          {
-            Token == "" ? (<div className="claimButton" id="connectWallet" onClick={login}>Connect</div>) : (<div className="claimButton" id="connectWallet" onClick={logOut}>Disconnect</div>)
-          }
+        {Token == "" ? (
+                <div className="claimButton" id="connectWallet">
+                  Claim
+                </div>
+              ) : (
+                <div
+                  className="claimButton"
+                  id="connectWallet"
+                  onClick={ClaimReawrd}
+                >
+                  Claim
+                </div>
+              )}
           <div className="claimButton hide" id="ClaimM" >Claim Rewards</div>
         </a></div>
         <div className="leftBox">
@@ -151,7 +163,7 @@ export function Content() {
               </div>
             </div>
             <div className="weirdTrio tooltip">
-              <img src="res/weirdos-05.png" alt=""></img>
+              <img src={Werido5} alt=""></img>
               <div className="bottom">
                 <p>Bonus traits of the week: <b>Stumble with Lolipop</b> face, <b>Pink Bathrobe</b> clothing (devils and skellys) and <b>Green Octopus </b>head. You can see the bonuses for having one or more of this traits at our <b>FAQ section</b>.</p>
                 <i></i>
