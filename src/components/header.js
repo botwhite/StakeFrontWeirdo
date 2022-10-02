@@ -62,6 +62,7 @@ export function Header(props) {
     await transaction.wait();
     if (transaction) {
       console.log(transaction);
+      setRefresca(!Refresca)
     }
   };
 
@@ -124,7 +125,7 @@ export function Header(props) {
             </li>
           )}
 
-{TokenAproo < 0 ? (
+{TokenAproo<= 0 ? (
                   <li>
                     <a id="aprobar" onClick={AproToken}>
                       Approve Token
@@ -250,7 +251,7 @@ export function Header(props) {
                   </li>
                 )}
 
-                {TokenAproo > 0 ? (
+                {TokenAproo <= 0 ? (
                   <li>
                     <a id="aprobar" onClick={AproToken}>
                       Approve Token

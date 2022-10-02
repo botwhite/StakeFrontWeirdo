@@ -138,7 +138,7 @@ export function Content() {
     ApiNFt,
     ContratToken, Refresca, setRefresca, setNfts, setNftsInStake, Nfts, NftsInStake, MisPuntos, setMisPuntos, Statistics1, Statistics2, Statistics3, Statistics4, Statistics5,
     login,
-    logOut, StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, YaAprobo, Listo } = useContext(UserContext)
+    logOut, StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, YaAprobo, Listo, YaAproboToken } = useContext(UserContext)
 
 
 
@@ -161,9 +161,13 @@ export function Content() {
 
   useEffect(() => {
     if (Listo == true) {
-      StakeinNft()
+      let user = Moralis.User.current();
       BuscarNft()
+      YaAprobo(user.get("ethAddress"))             
+      StakeinNft()
       NftStatistics()
+      YaAproboToken(user.get("ethAddress"))
+    // console.log(Listo)
     }
 
 

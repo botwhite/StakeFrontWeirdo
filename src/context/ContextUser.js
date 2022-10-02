@@ -338,10 +338,22 @@ export const UserProvider = ({ children }) => {
                 setToken(response.data.token)
                  localStorage.setItem('asdasd', response.data.token);
                  setListo(true)
+                 Swal.fire(
+                
+                    `I login successfully`,
+                    '',
+                    'success'
+                  )
 
     
             } else {
                 console.log("Signature not verified");
+                Swal.fire(
+                
+                    `Login failed, please try again and verify that you do not have more than one account connected to the page`,
+                    '',
+                    'error'
+                  )
             }
         }).catch((err) => console.log(err));
 
@@ -456,7 +468,7 @@ export const UserProvider = ({ children }) => {
             ApiNFt,
             ContratToken, Refresca, setRefresca, setNfts, setNftsInStake, Nfts, NftsInStake, MisPuntos, setMisPuntos, Statistics1, Statistics2, Statistics3, Statistics4, Statistics5,
             login,
-            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT, YaAprobo, EsApro, Stakeall, UnStakeall, Listo, TokenAproo, setTokenAproo
+            logOut,StakeinNft, NftStatistics, ClaimReawrd, BuscarNft, AproNFT, YaAprobo, EsApro, Stakeall, UnStakeall, Listo, TokenAproo, setTokenAproo, YaAproboToken
 
         }}>
             {children}
