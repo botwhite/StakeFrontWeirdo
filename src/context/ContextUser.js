@@ -340,7 +340,7 @@ export const UserProvider = ({ children }) => {
                  setListo(true)
                  Swal.fire(
                 
-                    `I login successfully`,
+                    `Logged in Successfully`,
                     '',
                     'success'
                   )
