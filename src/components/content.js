@@ -167,6 +167,8 @@ export function Content() {
       StakeinNft()
       NftStatistics()
       YaAproboToken(user.get("ethAddress"))
+      setMyUser(user.get("ethAddress"))
+
     // console.log(Listo)
     }
 
@@ -289,7 +291,7 @@ export function Content() {
         <div className="rightBox">
           <div className="rightBoxContent" id="rightBoxContent">
 
-            <div id="WalletD" >{MyUser.substring(0, 8)}</div>
+            <div id="WalletD" >{MyUser.substring(0, 8)}aa</div>
             <div id="Your_WeirdosD"> {NftsInStake.length}/ {Nfts.length + NftsInStake.length}
             </div>
             <div className="weirdos" id="weirdosAll">

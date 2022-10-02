@@ -451,6 +451,7 @@ export const UserProvider = ({ children }) => {
             StakeinNft()
             NftStatistics()
             YaAproboToken(user.get("ethAddress"))
+            setMyUser(user.get("ethAddress"))
           // console.log(Listo)
         }
     },[Listo])
