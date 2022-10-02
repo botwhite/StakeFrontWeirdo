@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { useContext, useEffect } from 'react';
 import { StakeABi } from "../ABI/Stake";
 
+
 import axios from "axios";
 
 import Web3 from "web3";
@@ -215,7 +216,7 @@ export const UserProvider = ({ children }) => {
             NftsInStake.map(async rest => {
                 
                 await axios
-                .delete(`${URL}/nft/deleteStake/${rest.id}`, {
+                .delete(`${URL}/nft/deleteStake/${rest.id}/${ContratNft1}`, {
                   headers: {
                                   authorization: `Bearer ${Token}`,
               'Access-Control-Request-Private-Network': 'true'
@@ -256,21 +257,58 @@ export const UserProvider = ({ children }) => {
           console.log(allowance)
           setTokenAproo(allowance)
     }
+    const getWeb3 = async () => {
+        return new Promise((resolve, reject) => {
+          if (document.readyState == "complete") {
+            if (window.ethereum) {
+              const web3 = new Web3(window.ethereum);
+              //resolve(web3);
+            } else {
+              reject("must install MetaMask");
+              // document.getElementById("web3_message").textContent =
+              //   "Error: Please install Metamask";
+            }
+          } else {
+            window.addEventListener("load", async () => {
+              if (window.ethereum) {
+                const web3 = new Web3(window.ethereum);
+                resolve(web3);
+              } else {
+                reject("must install MetaMask");
+                // document.getElementById("web3_message").textContent =
+                //   "Error: Please install Metamask";
+              }
+            });
+          }
+        });
+      };
 
-    const BuscarNft = async () => {
+    const BuscarNft = async (user) => {
+        // console.log(user)
+        // let web3 = await getWeb3();
+        // let ContratoNft = new web3.eth.Contract(TokenABi, ContratNft1);
+        // let balance = await ContratoNft.methods.balanceOf(user.get("ethAddress")).call();
+
+        
+
+
+        // console.log(balance)
+
+
         const options = {
             chain: "polygon",
-            address: MyUser,
+            address: user,
             token_address: ContratNft1,
         };
         const polygonNFTs = await Moralis.Web3API.account.getNFTsForContract(options);
+        console.log(polygonNFTs)
 
         var nftData = [];
         var datos = [];
 
         await asyncForEach(polygonNFTs.result, async (registro) => {
             await axios.get(registro.token_uri).then((resp) => {
-
+                console.log(resp)
                 datos = {
                     name: resp.data.name,
                     id: resp.data.edition,
@@ -446,11 +484,12 @@ export const UserProvider = ({ children }) => {
     useEffect(() => {
         if(Listo == true){
             let user = Moralis.User.current();
-            BuscarNft()
+            BuscarNft(user.get("ethAddress"))
             YaAprobo(user.get("ethAddress"))             
-            StakeinNft()
+            StakeinNft(user.get("ethAddress"))
             NftStatistics()
             YaAproboToken(user.get("ethAddress"))
+
             setMyUser(user.get("ethAddress"))
           // console.log(Listo)
         }
