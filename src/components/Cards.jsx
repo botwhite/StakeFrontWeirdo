@@ -6,7 +6,7 @@ import axios from "axios";
 import Moralis from "moralis-v1";
 
 function Cards(props) {
-  const { MyUser, setMyUser, setToken, Token, URL, ContratNft1, ContratStake, Refresca, setRefresca } =
+  const { MyUser, setMyUser, setToken, Token, URL, ContratNft1, ContratNft2, ContratStake, Refresca, setRefresca } =
     useContext(UserContext);
 
   const Stake = async () => {
@@ -31,7 +31,7 @@ function Cards(props) {
     await transaction.wait();
 
     if (transaction) {
-      console.log(transaction);
+     // console.log(transaction);
 
       await axios
         .post(
@@ -105,15 +105,15 @@ function Cards(props) {
           </div>
         </div>
       ) : (
-        <div className="emptyWeirdo crossW" onClick={ Stake}>
+        <div className="emptyWeirdo crossW" onClick={Stake}>
           <img src={props.img} alt="weirdo"></img>
           <div className="yellowBand">{props.name}  </div>
           <div className="weirdMessage">
           {props.frase}
-
           </div>
         </div>
       )}
+
     </>
   );
 }

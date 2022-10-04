@@ -24,6 +24,8 @@ export function Header(props) {
     ContratToken,
     Nfts,
     setNfts,
+    Nfts2,
+    setNfts2,
     NftsInStake,
     setNftsInStake,
     Refresca,
@@ -38,6 +40,8 @@ export function Header(props) {
     Stakeall,
     UnStakeall,
     TokenAproo,
+    EsApro2,
+    AproNFT2,
   } = useContext(UserContext);
 
   const AproToken = async () => {
@@ -62,7 +66,7 @@ export function Header(props) {
     await transaction.wait();
     if (transaction) {
       console.log(transaction);
-      setRefresca(!Refresca)
+      setRefresca(!Refresca);
     }
   };
 
@@ -111,6 +115,15 @@ export function Header(props) {
               FAQ
             </a>
           </li>
+          {EsApro2 ? (
+                  <li className={Nfts2 > 0 ? "hide" : ""}>
+                    <a id="aprobar" onClick={AproNFT2}>
+                      Approve Stake Special
+                    </a>
+                  </li>
+                ) : (
+                  ""
+                )}
           {EsApro == "" ? (
             <li>
               <a id="aprobar" onClick={AproNFT}>
@@ -125,20 +138,19 @@ export function Header(props) {
             </li>
           )}
 
-{TokenAproo<= 0 ? (
-                  <li>
-                    <a id="aprobar" onClick={AproToken}>
-                      Approve Token
-                    </a>
-                  </li>
-                ) : (
-                  <li>
-                    <a id="special" onClick={UnStakeall}>
-                      UnStake All
-                    </a>
-                  </li>
-                )}
-
+          {TokenAproo <= 0 ? (
+            <li>
+              <a id="aprobar" onClick={AproToken}>
+                Approve Token
+              </a>
+            </li>
+          ) : (
+            <li>
+              <a id="special" onClick={UnStakeall}>
+                UnStake All
+              </a>
+            </li>
+          )}
 
           <li className="uwuClaim">
             <div className="cummulative" id="Your_Reward">
@@ -236,7 +248,15 @@ export function Header(props) {
                 <li>
                   <a>FAQ</a>
                 </li>
-
+                {EsApro2 ? (
+                  <li className={Nfts2 > 0 ? "hide" : ""}>
+                    <a id="aprobar" onClick={AproNFT2}>
+                      Approve Stake Special
+                    </a>
+                  </li>
+                ) : (
+                  ""
+                )}
                 {EsApro == "" ? (
                   <li>
                     <a id="aprobar" onClick={AproNFT}>
