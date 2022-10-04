@@ -395,7 +395,7 @@ export function Content() {
       <Header></Header>
       <div className="alfaCont">
         <div className="uwuClaim mobileUwuClaim">
-          <div className="cummulative" id="Your_RewardM">
+          <div className="cummulative cummulativeM" id="Your_RewardM">
             {" "}
             {MisPuntos.toFixed(2)}
           </div>{" "}

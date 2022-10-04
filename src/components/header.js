@@ -8,8 +8,12 @@ import ImgPrender from "../res/Prender.png";
 import ImgApagar from "../res/Apagar.png";
 import { UserContext } from "../context/ContextUser";
 import { TokenABi } from "../ABI/Token";
+import {useSound} from 'use-sound'
+import terror from '../../src/Terror2.wav';
 
 export function Header(props) {
+  const [play, {pause}] = useSound(terror);
+  const [onOff, setOnOff] = useState(true);
   const [show, setShow] = useState(false);
 
   const {
@@ -115,40 +119,51 @@ export function Header(props) {
               FAQ
             </a>
           </li>
+          
           {EsApro2 ? (
                   <li className={Nfts2 > 0 ? "hide" : ""}>
+                    <div className="claimButton CBtop">
                     <a id="aprobar" onClick={AproNFT2}>
                       Approve Stake Special
                     </a>
+                    </div>
                   </li>
                 ) : (
                   ""
                 )}
           {EsApro == "" ? (
             <li>
+              <div className="claimButton CBtop">
               <a id="aprobar" onClick={AproNFT}>
                 Approve Stake
               </a>
+              </div>
             </li>
           ) : (
             <li>
+              <div className="claimButton CBtop">
               <a id="special" onClick={Stakeall}>
                 Stake All
               </a>
+              </div>
             </li>
           )}
 
           {TokenAproo <= 0 ? (
             <li>
+               <div className="claimButton CBtop">
               <a id="aprobar" onClick={AproToken}>
                 Approve Token
               </a>
+              </div>
             </li>
           ) : (
             <li>
+               <div className="claimButton CBtop">
               <a id="special" onClick={UnStakeall}>
                 UnStake All
               </a>
+              </div>
             </li>
           )}
 
@@ -200,9 +215,18 @@ export function Header(props) {
             </a>
           </li>
           <li>
-            <div id="toggleAudio" className="mute">
-              {" "}
-            </div>
+          {onOff?
+              <div onClick={()=>{setOnOff(!onOff)}}>
+                  <div id="toggleAudio" className="mute" onClick={play}> 
+                  </div>
+              </div>
+              :
+              <div onClick={()=>{setOnOff(!onOff)}}>
+                  <div id="toggleAudio" className="unmute" onClick={()=>{pause()}}> 
+                  </div>
+              </div>
+
+          }
           </li>
         </ul>
         <img src={logo02} className="logoMov hideDesktop" alt=""></img>
@@ -250,38 +274,51 @@ export function Header(props) {
                 </li>
                 {EsApro2 ? (
                   <li className={Nfts2 > 0 ? "hide" : ""}>
-                    <a id="aprobar" onClick={AproNFT2}>
+                     <div className="claimButton CBtop">
+                     <a id="aprobar" onClick={AproNFT2}>
                       Approve Stake Special
                     </a>
+                     </div>
                   </li>
                 ) : (
                   ""
                 )}
                 {EsApro == "" ? (
                   <li>
+                    <div className="claimButton CBtop">
+
                     <a id="aprobar" onClick={AproNFT}>
                       Approve Stake
                     </a>
+                    </div>
                   </li>
                 ) : (
                   <li>
+                    <div className="claimButton CBtop">
+
                     <a id="special" onClick={Stakeall}>
                       Stake All
                     </a>
+                    </div>
                   </li>
                 )}
 
                 {TokenAproo <= 0 ? (
                   <li>
+                    <div className="claimButton CBtop">
+
                     <a id="aprobar" onClick={AproToken}>
                       Approve Token
                     </a>
+                    </div>
                   </li>
                 ) : (
                   <li>
+                    <div className="claimButton CBtop">
                     <a id="special" onClick={UnStakeall}>
                       UnStake All
                     </a>
+                    </div>
                   </li>
                 )}
 
