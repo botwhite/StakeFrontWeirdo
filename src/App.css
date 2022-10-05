@@ -773,6 +773,29 @@ nav a:hover:before {
 .cummulativeM{
   width: 6em;
 }
+.devLogo{
+  background-image: url(./res/evildevils.png);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.closeXicon{
+  background-image: url(./res/Iconos-09.png);
+  height: 2em;
+  width: 2em;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -1em;
+  right: 2em;
+  margin-left: -2em;
+  margin-top: -45px;
+  width: 2em;
+  height: 45px;
+  z-index: 1000;
+  
+}
 @media screen and (max-width: 767px) {
   .BM {
     background-color: red;
@@ -1097,7 +1120,7 @@ nav a:hover:before {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    top: -8em;
+    top: 0em;
     position: relative;
   }
   /**/
@@ -1129,7 +1152,7 @@ nav a:hover:before {
     text-align: left;
   }
   .weirdTrio > img {
-    width: 14.5em;
+    width: 13.5em;
     margin-top: -20px;
     margin-left: -25px;
   }
@@ -1142,7 +1165,7 @@ nav a:hover:before {
     margin-left: -3px;
   }
   .weirdos {
-    margin-top: calc(13.5em + 5%);
+    margin-top: calc(3.5em + 5%);
     width: 90%;
     height: 18em;
     overflow-y: scroll;
@@ -1306,7 +1329,7 @@ nav a:hover:before {
     margin-right: 23px;
     text-shadow: #91f350 1px 1px;
     position: relative;
-    top: 14em;
+    top: 5.5em;
   }
   #Your_WeirdosD {
     text-shadow: #91f350 1px 1px;
@@ -1314,7 +1337,7 @@ nav a:hover:before {
     margin-top: -1em;
     position: relative;
     left: 4em;
-    top: 5.5em;
+    top: 2.5em;
   }
 }
 
@@ -1390,7 +1413,7 @@ nav a:hover:before {
     text-align: left;
   }
   .weirdTrio > img {
-    width: 17em;
+    width: 16.5em;
     margin-top: -15px;
     margin-left: -15px;
   }

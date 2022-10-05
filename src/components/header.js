@@ -242,9 +242,9 @@ export function Header(props) {
           <div className="nav-wrapper">
             <div>
               <div className="toggleButton" onClick={() => setShow(!show)}>
-                <div className="hamburger">
-                  <img src="res/Iconos-09.png" alt="close"></img>
-                </div>
+             
+                <div className="closeXicon"></div>
+              
               </div>
               <ul className="mobUL">
                 <div className="walletTitle">Your wallet</div>
