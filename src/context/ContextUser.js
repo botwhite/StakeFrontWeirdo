@@ -23,6 +23,8 @@ export const UserProvider = ({ children }) => {
   //const URL = "http://localhost:5000";
   const URL = "https://stakeapi.weirdometada.com";
   const ContratNft1 = "0xf76D572b7cAd7DC379FE9a480DFCDf56713Fda5b";
+  
+
   const ContratNft2 = "0x208c6cce6f63f0bE1FF32c630240779eC9bba54c";
   const ContratStake = "0x57d285b45A57702d725176228b151fc405C98D28";
   const ContratToken = "0x79E8D08b5e4E1a5faaFBa21c442Be75775b08ce5";
@@ -421,7 +423,7 @@ export const UserProvider = ({ children }) => {
 
   const StakeinNft = async () => {
     await axios
-      .get(`${URL}/nft/NftStake`, {
+      .get(`${URL}/nft/NftStake/${ContratNft1}`, {
         headers: {
           authorization: `Bearer ${Token}`,
           "Access-Control-Request-Private-Network": "true",
@@ -475,7 +477,7 @@ export const UserProvider = ({ children }) => {
 
   const ClaimReawrd = async () => {
     await axios
-      .get(`${URL}/nft/ClaimTokenReward`, {
+      .get(`${URL}/nft/ClaimTokenReward/${ContratNft1}`, {
         headers: {
           authorization: `Bearer ${Token}`,
           "Access-Control-Request-Private-Network": "true",
