@@ -303,7 +303,8 @@ export const UserProvider = ({ children }) => {
     const polygonNFTs = await Moralis.Web3API.account.getNFTsForContract(
       options
     );
-    //console.log(polygonNFTs)
+    console.log("polygonNFTs")
+    console.log(polygonNFTs)
 
     var nftData = [];
     var datos = [];
@@ -315,7 +316,7 @@ export const UserProvider = ({ children }) => {
           
           datos = {
             name: resp.data.name,
-            id: resp.data.edition,
+            id: registro.token_id,
             attributes: resp.data.attributes,
             img: resp.data.image,
           };
