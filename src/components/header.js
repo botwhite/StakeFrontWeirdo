@@ -11,11 +11,13 @@ import { TokenABi } from "../ABI/Token";
 import {useSound} from 'use-sound'
 import terror from '../../src/Terror2.wav';
 
+
+
 export function Header(props) {
   const [play, {pause}] = useSound(terror);
   const [onOff, setOnOff] = useState(true);
-  const [show, setShow] = useState(false);
-
+  const [show, setShow] = useState(false);  
+  
   const {
     MyUser,
     setMyUser,
@@ -47,8 +49,10 @@ export function Header(props) {
     EsApro2,
     AproNFT2,
   } = useContext(UserContext);
+  
 
   const AproToken = async () => {
+    
     const sendOptions = {
       chain: "polygon",
       contractAddress: ContratToken,
@@ -72,8 +76,7 @@ export function Header(props) {
       console.log(transaction);
       setRefresca(!Refresca);
     }
-  };
-
+  };   
   return (
     <>
       <div className="headerBar">
@@ -254,24 +257,36 @@ export function Header(props) {
                 <div className="stakedTitle">Your weirdos staked</div>
                 <div id="Your_Weirdos" className="hide"></div>
                 <li>
-                  <a href="https://underworldweirdos.com/">Weirdos Who?</a>
+                  <div className="LButton">
+                    <a href="https://underworldweirdos.com/">Weirdos Who?</a>
+                  </div>
                 </li>
                 <li>
+                  <div className="LButton">
                   <a href="https://mint.underworldweirdos.com/">Mint</a>
+                  </div>
                 </li>
                 <li>
-                  <a href="https://opensea.io/collection/underworldweirdos-main">
-                    Collection
-                  </a>
+                  <div className="LButton">
+                    <a href="https://opensea.io/collection/underworldweirdos-main">
+                      Collection
+                    </a>
+                  </div>  
                 </li>
                 <li>
-                  <a href="https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0xc586a4a0db0bc1169d490b8fbf0633cc06d0f0d3">
-                    Token
-                  </a>
+                  <div className="LButton">
+                    <a href="https://quickswap.exchange/#/swap?inputCurrency=0x0d500b1d8e8ef31e21c99d1db9a6444d3adf1270&outputCurrency=0xc586a4a0db0bc1169d490b8fbf0633cc06d0f0d3">
+                      Token
+                    </a>
+                  </div>
                 </li>
                 <li>
+                <div className="LButton Last">
                   <a>FAQ</a>
+                  </div>
                 </li>
+                <li className="pairButton">
+
                 {EsApro2 ? (
                   <li className={Nfts2 > 0 ? "hide" : ""}>
                      <div className="claimButton CBtop">
@@ -284,44 +299,44 @@ export function Header(props) {
                   ""
                 )}
                 {EsApro == "" ? (
-                  <li>
+                  
                     <div className="claimButton CBtop">
 
                     <a id="aprobar" onClick={AproNFT}>
                       Approve Stake
                     </a>
                     </div>
-                  </li>
+               
                 ) : (
-                  <li>
+                 
                     <div className="claimButton CBtop">
 
                     <a id="special" onClick={Stakeall}>
                       Stake All
                     </a>
                     </div>
-                  </li>
+               
                 )}
 
                 {TokenAproo <= 0 ? (
-                  <li>
+                 
                     <div className="claimButton CBtop">
 
                     <a id="aprobar" onClick={AproToken}>
                       Approve Token
                     </a>
                     </div>
-                  </li>
+              
                 ) : (
-                  <li>
+               
                     <div className="claimButton CBtop">
                     <a id="special" onClick={UnStakeall}>
                       UnStake All
                     </a>
                     </div>
-                  </li>
+                
                 )}
-
+                </li>
                 <div className="contMobSocialButtons">
                   <li className="socialButtons mobSocialButtons">
                     <a>
