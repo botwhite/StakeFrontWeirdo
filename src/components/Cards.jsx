@@ -10,7 +10,7 @@ function Cards(props) {
     useContext(UserContext);
 
   const Stake = async () => {
-    if (Token === "") return console.log("no hay token");
+    if (Token === "") return console.log("no error");
     const sendOptions = {
       chain: "polygon",
       contractAddress: ContratStake,
@@ -57,7 +57,7 @@ function Cards(props) {
   };
 
   const UnStake = async () => {
-    if (Token === "") return console.log("no hay token");
+    if (Token === "") return console.log("no error");
     const sendOptions = {
       chain: "polygon",
       contractAddress: ContratStake,
@@ -79,7 +79,7 @@ function Cards(props) {
     await transaction.wait();
 
     if (transaction) {
-      console.log(transaction);
+     // console.log(transaction);
 
       await axios
         .delete(`${URL}/nft/deleteStake/${props.id}/${ContratNft1}`, {

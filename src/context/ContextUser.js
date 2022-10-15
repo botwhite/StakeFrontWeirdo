@@ -560,7 +560,7 @@ export const UserProvider = ({ children }) => {
         setNfts2,
         EsApro2,
         AproNFT2,
-        YaAprobo2
+        YaAprobo2, ContratNft2
       }}
     >
       {children}

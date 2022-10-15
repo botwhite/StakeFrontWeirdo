@@ -123,16 +123,17 @@ export function Header(props) {
             </a>
           </li>
           
+
           {EsApro2 ? (
-                  <li className={Nfts2 > 0 ? "hide" : ""}>
-                    <div className="claimButton CBtop">
-                    <a id="aprobar" onClick={AproNFT2}>
-                      Approve Stake Special
-                    </a>
-                    </div>
-                  </li>
+""
                 ) : (
-                  ""
+                  <li className={Nfts2 > 0 ? "hide" : ""}>
+                  <div className="claimButton CBtop">
+                  <a id="aprobar" onClick={AproNFT2}>
+                   Approve Stake Special
+                 </a>
+                  </div>
+               </li>
                 )}
           {EsApro == "" ? (
             <li>
@@ -288,15 +289,15 @@ export function Header(props) {
                 <li className="pairButton">
 
                 {EsApro2 ? (
-                  <li className={Nfts2 > 0 ? "hide" : ""}>
-                     <div className="claimButton CBtop">
-                     <a id="aprobar" onClick={AproNFT2}>
-                      Approve Stake Special
-                    </a>
-                     </div>
-                  </li>
+""
                 ) : (
-                  ""
+                  <li className={Nfts2 > 0 ? "hide" : ""}>
+                  <div className="claimButton CBtop">
+                  <a id="aprobar" onClick={AproNFT2}>
+                   Approve Stake Special
+                 </a>
+                  </div>
+               </li>
                 )}
                 {EsApro == "" ? (
                   
